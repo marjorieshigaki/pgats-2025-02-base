@@ -1,10 +1,11 @@
-const express = require('express');
-const { ApolloServer } = require('apollo-server-express');
-const typeDefs = require('./schema');
-const resolvers = require('./resolvers');
+import express from 'express';
+import { ApolloServer } from 'apollo-server-express';
+import typeDefs from './schema.js';
+import resolvers from './resolvers.js';
+
+import userService from '../src/services/userService.js';
 
 const app = express();
-const userService = require('../src/services/userService');
 
 const server = new ApolloServer({
   typeDefs,
@@ -27,4 +28,4 @@ async function startApollo() {
 
 startApollo();
 
-module.exports = app;
+export default app;

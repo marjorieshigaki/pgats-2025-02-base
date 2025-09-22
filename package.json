@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require esm test/**/*.js"
+    "test": "mocha test/**/*.js",
+    "test:ci": "mocha test/**/*.js --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -13,14 +14,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/juliodelimas/pgats-2025-02-base/issues"
   },
   "homepage": "https://github.com/juliodelimas/pgats-2025-02-base#readme",
   "dependencies": {
+    "apollo-server": "^3.13.0",
     "apollo-server-express": "^3.13.0",
-    "esm": "^3.2.25",
     "express": "^4.21.2",
     "graphql": "^16.11.0",
     "jsonwebtoken": "^9.0.2",

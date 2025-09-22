@@ -1,8 +1,8 @@
-const request = require('supertest');
-const chai = require('chai');
-const expect = chai.expect;
-const app = require('../rest/app');
-const jwt = require('jsonwebtoken');
+import request from 'supertest';
+import { expect } from 'chai';
+import app from '../rest/app.js';
+import jwt from 'jsonwebtoken';
+
 const SECRET = 'supersecret';
 const validToken = jwt.sign({ id: 1, email: 'test@example.com' }, SECRET, { expiresIn: '1h' });
 

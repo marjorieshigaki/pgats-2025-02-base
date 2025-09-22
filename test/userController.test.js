@@ -1,8 +1,7 @@
-const sinon = require('sinon');
-const chai = require('chai');
-const expect = chai.expect;
-const userController = require('../rest/controllers/userController');
-const userService = require('../src/services/userService');
+import sinon from 'sinon';
+import { expect } from 'chai';
+import userController from '../rest/controllers/userController.js';
+import userService from '../src/services/userService.js';
 
 describe('User Controller Tests', () => {
   it('should call registerUser with correct parameters', () => {

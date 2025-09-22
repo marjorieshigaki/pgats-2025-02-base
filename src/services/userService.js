@@ -1,5 +1,5 @@
-const users = require('../models/user');
-const jwt = require('jsonwebtoken');
+import users from '../models/user.js';
+import jwt from 'jsonwebtoken';
 const SECRET = 'supersecret';
 
 function findUserByEmail(email) {
@@ -34,4 +34,10 @@ function getAllUsers() {
   return users;
 }
 
-module.exports = { findUserByEmail, registerUser, authenticate, verifyToken, getAllUsers };
+export default {
+  findUserByEmail,
+  registerUser,
+  authenticate,
+  verifyToken,
+  getAllUsers
+};

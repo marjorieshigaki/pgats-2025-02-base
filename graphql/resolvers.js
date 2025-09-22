@@ -1,10 +1,17 @@
-const users = require('../src/models/user');
-const userService = require('../src/services/userService');
-const checkoutService = require('../src/services/checkoutService');
+import users from '../src/models/user.js';
+import userService from '../src/services/userService.js';
+import checkoutService from '../src/services/checkoutService.js';
 
-module.exports = {
+const resolvers = {
   Query: {
-    users: () => users
+    users: () => {
+      try {
+        const result = users.map(({ name, email }) => ({ name, email }));
+        return result;
+      } catch (error) {
+        throw new Error('Erro ao buscar usuários');
+      }
+    }
   },
   Mutation: {
     register: (_, { name, email, password }) => {
@@ -25,3 +32,5 @@ module.exports = {
     }
   }
 };
+
+export default resolvers;

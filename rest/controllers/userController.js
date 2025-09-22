@@ -1,20 +1,24 @@
-const userService = require('../../src/services/userService');
+import userService from '../../src/services/userService.js';
 
-exports.register = (req, res) => {
-  const { name, email, password } = req.body;
-  const user = userService.registerUser(name, email, password);
-  if (!user) return res.status(400).json({ error: 'Email já cadastrado' });
-  res.status(201).json({ user });
+const userController = {
+  register: (req, res) => {
+    const { name, email, password } = req.body;
+    const user = userService.registerUser(name, email, password);
+    if (!user) return res.status(400).json({ error: 'Email já cadastrado' });
+    res.status(201).json({ user });
+  },
+
+  login: (req, res) => {
+    const { email, password } = req.body;
+    const result = userService.authenticate(email, password);
+    if (!result) return res.status(401).json({ error: 'Credenciais inválidas' });
+    res.json(result);
+  },
+
+  getUsers: (req, res) => {
+    const users = userService.getAllUsers();
+    res.status(200).json(users);
+  }
 };
 
-exports.login = (req, res) => {
-  const { email, password } = req.body;
-  const result = userService.authenticate(email, password);
-  if (!result) return res.status(401).json({ error: 'Credenciais inválidas' });
-  res.json(result);
-};
-
-exports.getUsers = (req, res) => {
-  const users = userService.getAllUsers();
-  res.status(200).json(users);
-};
+export default userController;
