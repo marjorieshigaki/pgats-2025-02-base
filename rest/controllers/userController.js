@@ -13,3 +13,8 @@ exports.login = (req, res) => {
   if (!result) return res.status(401).json({ error: 'Credenciais inválidas' });
   res.json(result);
 };
+
+exports.getUsers = (req, res) => {
+  const users = userService.getAllUsers();
+  res.status(200).json(users);
+};
