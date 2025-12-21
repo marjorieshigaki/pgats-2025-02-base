@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node rest/server.js",
     "test": "mocha test/**/*.js",
     "test:ci": "mocha test/**/*.js --reporter spec"
   },

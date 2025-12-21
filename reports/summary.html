@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório de Performance K6</title>
+  <style>body{font-family:sans-serif;}table{border-collapse:collapse;}th,td{padding:4px 8px;}</style>
+</head>
+<body>
+  <h1>Relatório de Performance K6</h1>
+  <p>Gerado em: 21/12/2025, 18:24:20</p>
+  <h2>Métricas</h2>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <tr><th>Métrica</th><th>Tipo</th><th>Média</th><th>Mínimo</th><th>Máximo</th><th>P95</th></tr>
+    <tr><td>http_reqs</td><td>counter</td><td></td><td></td><td></td><td></td></tr><tr><td>http_req_duration</td><td>trend</td><td></td><td></td><td></td><td></td></tr><tr><td>http_req_blocked</td><td>trend</td><td></td><td></td><td></td><td></td></tr><tr><td>http_req_connecting</td><td>trend</td><td></td><td></td><td></td><td></td></tr><tr><td>http_req_tls_handshaking</td><td>trend</td><td></td><td></td><td></td><td></td></tr><tr><td>http_req_sending</td><td>trend</td><td></td><td></td><td></td><td></td></tr><tr><td>http_req_waiting</td><td>trend</td><td></td><td></td><td></td><td></td></tr><tr><td>http_req_receiving</td><td>trend</td><td></td><td></td><td></td><td></td></tr><tr><td>http_req_failed</td><td>rate</td><td></td><td></td><td></td><td></td></tr><tr><td>login_duration</td><td>trend</td><td></td><td></td><td></td><td></td></tr><tr><td>successful_logins</td><td>rate</td><td></td><td></td><td></td><td></td></tr><tr><td>checks</td><td>rate</td><td></td><td></td><td></td><td></td></tr><tr><td>group_duration</td><td>trend</td><td></td><td></td><td></td><td></td></tr><tr><td>vus</td><td>gauge</td><td></td><td></td><td></td><td></td></tr><tr><td>vus_max</td><td>gauge</td><td></td><td></td><td></td><td></td></tr><tr><td>product_list_duration</td><td>trend</td><td></td><td></td><td></td><td></td></tr><tr><td>checkout_duration</td><td>trend</td><td></td><td></td><td></td><td></td></tr><tr><td>successful_checkouts</td><td>rate</td><td></td><td></td><td></td><td></td></tr><tr><td>data_sent</td><td>counter</td><td></td><td></td><td></td><td></td></tr><tr><td>data_received</td><td>counter</td><td></td><td></td><td></td><td></td></tr><tr><td>iteration_duration</td><td>trend</td><td></td><td></td><td></td><td></td></tr><tr><td>iterations</td><td>counter</td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <h2>Resumo</h2>
+  <pre>{
+  "http_reqs": {
+    "name": "http_reqs",
+    "type": "counter",
+    "contains": "default",
+    "thresholds": [],
+    "submetrics": null
+  },
+  "http_req_duration": {
+    "name": "http_req_duration",
+    "type": "trend",
+    "contains": "time",
+    "thresholds": [
+      "p(95)<500",
+      "p(99)<1000"
+    ],
+    "submetrics": [
+      {
+        "name": "http_req_duration{expected_response:true}",
+        "suffix": "expected_response:true",
+        "tags": {
+          "expected_response": "true"
+        }
+      }
+    ]
+  },
+  "http_req_blocked": {
+    "name": "http_req_blocked",
+    "type": "trend",
+    "contains": "time",
+    "thresholds": [],
+    "submetrics": null
+  },
+  "http_req_connecting": {
+    "name": "http_req_connecting",
+    "type": "trend",
+    "contains": "time",
+    "thresholds": [],
+    "submetrics": null
+  },
+  "http_req_tls_handshaking": {
+    "name": "http_req_tls_handshaking",
+    "type": "trend",
+    "contains": "time",
+    "thresholds": [],
+    "submetrics": null
+  },
+  "http_req_sending": {
+    "name": "http_req_sending",
+    "type": "trend",
+    "contains": "time",
+    "thresholds": [],
+    "submetrics": null
+  },
+  "http_req_waiting": {
+    "name": "http_req_waiting",
+    "type": "trend",
+    "contains": "time",
+    "thresholds": [],
+    "submetrics": null
+  },
+  "http_req_receiving": {
+    "name": "http_req_receiving",
+    "type": "trend",
+    "contains": "time",
+    "thresholds": [],
+    "submetrics": null
+  },
+  "http_req_failed": {
+    "name": "http_req_failed",
+    "type": "rate",
+    "contains": "default",
+    "thresholds": [
+      "rate<0.05"
+    ],
+    "submetrics": null
+  },
+  "login_duration": {
+    "name": "login_duration",
+    "type": "trend",
+    "contains": "default",
+    "thresholds": [
+      "p(95)<800"
+    ],
+    "submetrics": null
+  },
+  "successful_logins": {
+    "name": "successful_logins",
+    "type": "rate",
+    "contains": "default",
+    "thresholds": [
+      "rate>0.95"
+    ],
+    "submetrics": null
+  },
+  "checks": {
+    "name": "checks",
+    "type": "rate",
+    "contains": "default",
+    "thresholds": [],
+    "submetrics": null
+  },
+  "group_duration": {
+    "name": "group_duration",
+    "type": "trend",
+    "contains": "time",
+    "thresholds": [],
+    "submetrics": null
+  },
+  "vus": {
+    "name": "vus",
+    "type": "gauge",
+    "contains": "default",
+    "thresholds": [],
+    "submetrics": null
+  },
+  "vus_max": {
+    "name": "vus_max",
+    "type": "gauge",
+    "contains": "default",
+    "thresholds": [],
+    "submetrics": null
+  },
+  "product_list_duration": {
+    "name": "product_list_duration",
+    "type": "trend",
+    "contains": "default",
+    "thresholds": [
+      "avg<300"
+    ],
+    "submetrics": null
+  },
+  "checkout_duration": {
+    "name": "checkout_duration",
+    "type": "trend",
+    "contains": "default",
+    "thresholds": [
+      "p(95)<1000"
+    ],
+    "submetrics": null
+  },
+  "successful_checkouts": {
+    "name": "successful_checkouts",
+    "type": "rate",
+    "contains": "default",
+    "thresholds": [
+      "rate>0.90"
+    ],
+    "submetrics": null
+  },
+  "data_sent": {
+    "name": "data_sent",
+    "type": "counter",
+    "contains": "data",
+    "thresholds": [],
+    "submetrics": null
+  },
+  "data_received": {
+    "name": "data_received",
+    "type": "counter",
+    "contains": "data",
+    "thresholds": [],
+    "submetrics": null
+  },
+  "iteration_duration": {
+    "name": "iteration_duration",
+    "type": "trend",
+    "contains": "time",
+    "thresholds": [],
+    "submetrics": null
+  },
+  "iterations": {
+    "name": "iterations",
+    "type": "counter",
+    "contains": "default",
+    "thresholds": [],
+    "submetrics": null
+  }
+}</pre>
+</body>
+</html>
